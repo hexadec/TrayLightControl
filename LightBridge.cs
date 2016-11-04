@@ -138,6 +138,8 @@ namespace TrayLightControl {
             // Send multiple times for extra reliability
             for (int i = 0; i < 3; i++) {
                 _client.Send(command, command.Length);
+                Thread.Sleep(30)
+                _client.Send(command, command.Length);
 
                 // Give bridge some time to handle messages
                 Thread.Sleep(Delay);
